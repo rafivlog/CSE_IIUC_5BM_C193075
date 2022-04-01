@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-ui.js"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class_Work</title>
+
+     <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+     <link rel="stylesheet" href="/resources/demos/style.css">
+     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
+
+
+     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
+
+
+<script>
+    function onclick_myfun()
+    {
+        var first_number = document.getElementById("first_number").value;
+        var second_number = document.getElementById("second_number").value;
+        var add = Number(first_number) + Number(second_number) ;
+        document.getElementById('sum').value = add;
+    }
+    function onchange_myfun( first_number2 = 0 , second_number2 = 0)
+    {
+        //alert("Hello Uesr!");
+        var add2 = Number(first_number2) + Number(second_number2)
+        document.getElementById('sum2').value = add2;
+    }
+    function onblur_myfun(first_number3,second_number3)
+    {
+        //alert("Hello Uesr!");
+        var first_number3 = document.getElementById("first_number3").value;
+        var second_number3 = document.getElementById("second_number3").value;
+        var add3 = Number(first_number3) + Number(second_number3)
+        document.getElementById('sum3').value = add3;
+    }
+   
+
+
+    $().ready(function () {
+        $("#datepicker").datepicker();
+        $("#frm").validate({
+            rules: {
+                naam: "required",
+                email: "required",
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+            }, messages: {
+                naam: "Please Enter Name ",
+                email: "Please Enter email ",
+                password: {
+                    required: "Please enter a password",
+                    minlength: "Your password must be consist of at least 5 characters"
+                },
+            }
+        });
+    });
+
+</script>
+
+<!-- <script>
+   
+</script> -->
+
+</head>
+
+    <!-- <div style="background-color: skyblue;padding: 1%;">
+        <input placeholder="Enter student name" type="text" name="studentName"><br>
+        <input placeholder="Enter Student ID" type="text" name="studentId"><br>
+    
+        <select name="department">
+            <option disabled selected value="Select Department">Select Department</option>
+            <option>CSE</option>
+            <option>CCE</option>
+            <option>EEE</option>
+        </select>
+    
+        <button class="button-class" name="formSubmit" value="Submit">Submit</button>
+    </div> -->
+    
+    
+
+    <div style="background-color: aquamarine;">
+        <table>
+            <tr>
+                <td>Enter First Number</td>
+                <td><input type="number" id="first_number" name="first_number"></td>
+            </tr>
+            <tr>
+                <td>Enter Second Number</td>
+                <td><input type="number" id="second_number" name="second_number"></td>
+            </tr>
+            <tr>
+                <td>Sum of First and Second Number</td>
+                <td><input type="number" id="sum" name="sum"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align ="center"><input type ="submit" name="" id="btn" onclick="onclick_myfun()"></td>
+            </tr>
+        </table>
+    
+        <br> <br> 
+    
+       <table >
+            <tr>
+                <td>Enter First Number</td>
+                <td><input type="number" id="first_number2" name="first_number2" onchange="onchange_myfun(this.value,getElementById('second_number2').value)" ></td>
+            </tr>
+            <tr>
+                <td>Enter Second Number</td>
+                <td><input type="number" id="second_number2" name="second_number2" onchange="onchange_myfun(getElementById('first_number2').value,this.value)"></td>
+            </tr>
+            <tr>
+                <td>Sum of First and Second Number</td>
+                <td><input type="number" id="sum2" name="sum2"></td>
+            </tr>
+        </table>
+    
+        <br> <br>   
+       <table>
+            <tr>
+                <td>Enter First Number</td>
+                <td><input type="number" id="first_number3" name="first_number3" onkeyup="onblur_myfun(this.value,getElementById('second_number3'))" ></td>
+            </tr>
+            <tr>
+                <td>Enter Second Number</td>
+                <td><input type="number" id="second_number3" name="second_number3" onkeyup="onblur_myfun(getElementById('first_number3'),this.value)"></td>
+            </tr>
+            <tr>
+                <td>Sum of First and Second Number</td>
+                <td><input type="number" id="sum3" name="sum3"></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <div style="background-color: antiquewhite;">
+        <form id="frm">
+            <div >
+                <input type="text" class="form-control" id="Name" name="naam" placeholder="Enter Name">
+            </div>
+            <div >
+                <input type="email" class="form-control" id="Email" name="email" placeholder="Enter Email">
+            </div>
+            <div >
+                <input type="text"  id="datepicker" name="datepicker" placeholder="Enter Birth Date">
+            </div>
+            <div >
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+            </div>
+            <div>
+                <button class="btn-success">submit</button>
+            </div>
+
+        </form>
+    </div>
+   
+
+    
+</body>
+</html>

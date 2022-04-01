@@ -57,13 +57,15 @@
             rules: {
                 naam: "required",
                 email: "required",
+                datepicker:"required",
                 password: {
                     required: true,
                     minlength: 5
                 },
             }, messages: {
                 naam: "Please Enter Name ",
-                email: "Please Enter email ",
+                email: "Please Enter Email ",
+                datepicker:"Please Enter Date",
                 password: {
                     required: "Please enter a password",
                     minlength: "Your password must be consist of at least 5 characters"
@@ -96,7 +98,7 @@
     
     
 
-    <div style="background-color: aquamarine;">
+    <div style="background-color: rgb(232, 255, 127);padding: 1%;">
         <table>
             <tr>
                 <td>Enter First Number</td>
@@ -151,21 +153,21 @@
 
 
 
-    <div style="background-color: antiquewhite;">
+    <div style="padding: 1%;background-color: rgba(23, 235, 175, 0.726)">
         <form id="frm">
-            <div >
+            <div class="col-md-2">
                 <input type="text" class="form-control" id="Name" name="naam" placeholder="Enter Name">
             </div>
-            <div >
+            <div class="col-md-2">
                 <input type="email" class="form-control" id="Email" name="email" placeholder="Enter Email">
             </div>
-            <div >
+            <div class="col-md-2">
                 <input type="text"  id="datepicker" name="datepicker" placeholder="Enter Birth Date">
             </div>
-            <div >
+            <div class="col-md-2">
                 <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
             </div>
-            <div>
+            <div class="col-md-2">
                 <button class="btn-success">submit</button>
             </div>
 
@@ -173,6 +175,6 @@
     </div>
    
 
-    
+
 </body>
 </html>
